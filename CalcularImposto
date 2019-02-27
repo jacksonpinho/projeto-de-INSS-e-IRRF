@@ -3,63 +3,63 @@ package unit;
 public class CalcularImposto {
 
 	private double salario;
-	private double imposto;
-	private double desconto;
+	private double inss;
+	private double irrf;
 
 	public CalcularImposto(double salario) {
 		this.salario = salario;
-		this.imposto = 0;
-		this.desconto = 0;
+		this.inss = 0;
+		this.irrf = 0;
 
 	}
 
 	public double CalcularDescontoInss() {
 		if (this.salario >= 1903.99 && this.salario <= 2826.65) {
-			this.imposto = this.salario * 0.075;
+			this.inss = this.salario * 0.075;
 		
 
 		} else if (this.salario >= 2826.66 && this.salario <= 3751.05) {
-			this.imposto = this.salario * 0.15;
+			this.inss = this.salario * 0.15;
 
 
 		} else if (this.salario >= 3751.06 && this.salario <= 4664.68) {
-			this.imposto = this.salario * 0.225;
+			this.inss = this.salario * 0.225;
 	
 
 		} else if (this.salario > 4664.68) {
-			this.imposto = this.salario * 0.275;
+			this.inss = this.salario * 0.275;
 		
 		}
-		return this.imposto;
+		return this.inss;
 
 	}
 
-	public double CalcularDescontoPagamento() {
+	public double CalcularDescontoIrrf() {
 
 		if (this.salario <= 1693.72) {
-			this.desconto = this.salario * 0.08;
+			this.irrf = this.salario * 0.08;
 
 		}
 
 		else if (this.salario >= 1693.72 && this.salario <= 2822.90) {
-			this.desconto = this.salario * 0.09;
+			this.irrf = this.salario * 0.09;
 		
 
 		} else if (this.salario >= 2822.90 && this.salario <= 5645.80) {
-			this.desconto = this.salario * 0.11;
+			this.irrf = this.salario * 0.11;
 		
 
 		}
-		return this.desconto;
+		return this.irrf;
 
 	}
 
-	public double getImposto() {
-		return imposto;
+	public double getInss() {
+		return inss;
 	}
 
-	public void setImposto(double imposto) {
-		this.imposto = imposto;
+	public void setInss(double inss) {
+		this.inss = inss;
 	}
 
 	public double getSalario() {
@@ -70,12 +70,12 @@ public class CalcularImposto {
 		this.salario = salario;
 	}
 
-	public double getDesconto() {
-		return desconto;
+	public double getIrrf() {
+		return irrf;
 	}
 
-	public void setDesconto(double desconto) {
-		this.desconto = desconto;
+	public void setIrrf(double irrf) {
+		this.irrf = irrf;
 	}
 
 }
