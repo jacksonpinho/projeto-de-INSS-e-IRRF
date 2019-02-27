@@ -1,0 +1,81 @@
+package unit;
+
+public class CalcularImposto {
+
+	private double salario;
+	private double imposto;
+	private double desconto;
+
+	public CalcularImposto(double salario) {
+		this.salario = salario;
+		this.imposto = 0;
+		this.desconto = 0;
+
+	}
+
+	public double CalcularDescontoInss() {
+		if (this.salario >= 1903.99 && this.salario <= 2826.65) {
+			this.imposto = this.salario * 0.075;
+		
+
+		} else if (this.salario >= 2826.66 && this.salario <= 3751.05) {
+			this.imposto = this.salario * 0.15;
+
+
+		} else if (this.salario >= 3751.06 && this.salario <= 4664.68) {
+			this.imposto = this.salario * 0.225;
+	
+
+		} else if (this.salario > 4664.68) {
+			this.imposto = this.salario * 0.275;
+		
+		}
+		return this.imposto;
+
+	}
+
+	public double CalcularDescontoPagamento() {
+
+		if (this.salario <= 1693.72) {
+			this.desconto = this.salario * 0.08;
+
+		}
+
+		else if (this.salario >= 1693.72 && this.salario <= 2822.90) {
+			this.desconto = this.salario * 0.09;
+		
+
+		} else if (this.salario >= 2822.90 && this.salario <= 5645.80) {
+			this.desconto = this.salario * 0.11;
+		
+
+		}
+		return this.desconto;
+
+	}
+
+	public double getImposto() {
+		return imposto;
+	}
+
+	public void setImposto(double imposto) {
+		this.imposto = imposto;
+	}
+
+	public double getSalario() {
+		return salario;
+	}
+
+	public void setSalario(double salario) {
+		this.salario = salario;
+	}
+
+	public double getDesconto() {
+		return desconto;
+	}
+
+	public void setDesconto(double desconto) {
+		this.desconto = desconto;
+	}
+
+}
