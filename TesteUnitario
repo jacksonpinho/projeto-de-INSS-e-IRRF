@@ -1,0 +1,63 @@
+package unit;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+public class TesteUnitario {
+
+	@Test
+	public void TesteResultadoFaixa1() {
+
+		CalcularImposto A = new CalcularImposto(1903.99);
+		A.CalcularDescontoInss();
+
+		assertEquals(142.80, A.getImposto(), 1);
+
+		CalcularImposto b = new CalcularImposto(1500);
+		b.CalcularDescontoPagamento();
+
+		assertEquals(120.00, b.getDesconto(), 1);
+
+	}
+
+	@Test
+	public void TesteResultadoFaixa2() {
+
+		CalcularImposto a = new CalcularImposto(2365.33);
+		a.CalcularDescontoInss();
+
+		assertEquals(a.getImposto(), 177.40, 1);
+
+		CalcularImposto b = new CalcularImposto(2365.33);
+		b.CalcularDescontoPagamento();
+
+		assertEquals(b.getDesconto(), 212.88, 1);
+	}
+
+	@Test
+	public void TesteResultadoFaixa3() {
+
+		CalcularImposto a = new CalcularImposto(3000);
+		a.CalcularDescontoInss();
+		assertEquals(a.getImposto(), 450);
+		CalcularImposto b = new CalcularImposto(3000);
+		b.CalcularDescontoPagamento();
+		assertEquals(b.getDesconto(), 330);
+	}
+
+	@Test
+	public void TesteResultadoFaixa4() {
+
+		CalcularImposto a = new CalcularImposto(5000);
+		a.CalcularDescontoInss();
+		assertEquals(a.getImposto(), 1375);
+		
+	}
+
+
+}
