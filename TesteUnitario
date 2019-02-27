@@ -16,12 +16,12 @@ public class TesteUnitario {
 		CalcularImposto A = new CalcularImposto(1903.99);
 		A.CalcularDescontoInss();
 
-		assertEquals(142.80, A.getImposto(), 1);
+		assertEquals(142.80, A.getInss(), 1);
 
 		CalcularImposto b = new CalcularImposto(1500);
-		b.CalcularDescontoPagamento();
+		b.CalcularDescontoIrrf();
 
-		assertEquals(120.00, b.getDesconto(), 1);
+		assertEquals(120.00, b.getIrrf(), 1);
 
 	}
 
@@ -31,12 +31,12 @@ public class TesteUnitario {
 		CalcularImposto a = new CalcularImposto(2365.33);
 		a.CalcularDescontoInss();
 
-		assertEquals(a.getImposto(), 177.40, 1);
+		assertEquals(a.getInss(), 177.40, 1);
 
 		CalcularImposto b = new CalcularImposto(2365.33);
-		b.CalcularDescontoPagamento();
+		b.CalcularDescontoIrrf();
 
-		assertEquals(b.getDesconto(), 212.88, 1);
+		assertEquals(b.getIrrf(), 212.88, 1);
 	}
 
 	@Test
@@ -44,10 +44,10 @@ public class TesteUnitario {
 
 		CalcularImposto a = new CalcularImposto(3000);
 		a.CalcularDescontoInss();
-		assertEquals(a.getImposto(), 450);
+		assertEquals(a.getInss(), 450);
 		CalcularImposto b = new CalcularImposto(3000);
-		b.CalcularDescontoPagamento();
-		assertEquals(b.getDesconto(), 330);
+		b.CalcularDescontoIrrf();
+		assertEquals(b.getIrrf(), 330);
 	}
 
 	@Test
@@ -55,7 +55,7 @@ public class TesteUnitario {
 
 		CalcularImposto a = new CalcularImposto(5000);
 		a.CalcularDescontoInss();
-		assertEquals(a.getImposto(), 1375);
+		assertEquals(a.getInss(), 1375);
 		
 	}
 
